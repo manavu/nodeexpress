@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <section class="section">
+        <h1><span class="content">お問い合わせ</span></h1>
+
+        <form method="POST" class="content form contactForm">
+            <dl>
+                <dt>お問い合わせの種類 (必須)</dt>
+                <dd>
+                    <div class="selectWrap">
+                        <select name="type">
+                            <% types.forEach(function(val){ %>
+                            <option value="<%=val.value%>"><%=val.value%></option>
+                            <% }); %>
+                        </select>
+                    </div>
+                    <!--
+                    <div class="selectWrap">
+                        <select name="type2">
+                            <% for (var i = 0; i < types.length; i++){ %>
+                            <option value="<%=types[i].value%>"><%=types[i].value%></option>
+                            <% } %>
+                        </select>
+                    </div>
+                        -->
+                </dd>
+                <dt>お名前 (必須)</dt>
+                <dd><input type="text" name="name" required></dd>
+                <dt>メールアドレス (必須)</dt>
+                <dd><input type="email" name="mail" required></dd>
+                <dt>お問い合わせ内容</dt>
+                <dd><textarea name="message" required></textarea></dd>
+            </dl>
+            <div class="btnWrap">
+                <button type="submit" class="button">送信する</button>
+            </div>
+        </form>
+    </section>
+
+</body>
+</html>
